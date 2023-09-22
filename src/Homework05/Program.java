@@ -1,8 +1,8 @@
 package Homework05;
 
-import OOP_Seminar05.Task01.models.TableModel;
-import OOP_Seminar05.Task01.presenters.BookingPresenter;
-import OOP_Seminar05.Task01.views.BookingView;
+import Homework05.models.TableModel;
+import Homework05.presenters.BookingPresenter;
+import Homework05.views.BookingView;
 
 import java.util.Date;
 

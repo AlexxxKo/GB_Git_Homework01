@@ -1,6 +1,6 @@
 package Homework05.models;
 
-import OOP_Seminar05.Task01.presenters.Model;
+import Homework05.presenters.Model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,21 +55,18 @@ public class TableModel implements Model {
      * @param tableNo номер столика
      * @param name имя
      */
-    public int[] changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
-        int[] result = new int[2];
+    public boolean changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
         for (Table el : loadTables()) {
             Iterator<Reservation> i = el.getReservations().iterator();
             while (i.hasNext()) {
                 Reservation e = i.next();
                 if (e.getId() == oldReservation) {
                     i.remove();
-                    result[0] = oldReservation;
-                    result[1] = reservationTable(reservationDate, tableNo, name);
-                    return result;
+                    return true;
                 }
             }
         }
-        throw new RuntimeException("Некорректный номер брони.");
+        return false;
     }
 
 

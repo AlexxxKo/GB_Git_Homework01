@@ -1,6 +1,6 @@
 package Homework05.presenters;
 
-import OOP_Seminar05.Task01.models.Table;
+import Homework05.models.Table;
 
 import java.util.Collection;
 
@@ -24,5 +24,5 @@ public interface View {
      */
     void printReservationTableResult(int reservationNo);
 
-    void printChangeReservationTableResult(int[] reservationNo);
+    void printChangeReservationTableResult(boolean reservation);
 }

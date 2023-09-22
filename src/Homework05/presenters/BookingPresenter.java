@@ -1,6 +1,6 @@
 package Homework05.presenters;
 
-import OOP_Seminar05.Task01.models.Table;
+import Homework05.models.Table;
 
 import java.util.Collection;
 import java.util.Date;
@@ -35,7 +35,12 @@ public class BookingPresenter implements ViewObserver {
 
     @Override
     public void onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
-        int[] reservationNo = tableModel.changeReservationTable(oldReservation, reservationDate, tableNo, name);
-        printChangeReservationTableResult(reservationNo);
+        boolean reservation = tableModel.changeReservationTable(oldReservation, reservationDate, tableNo, name);
+        updateChangeReservationResultUI(reservation);
+        onReservationTable(reservationDate, tableNo, name);
+    }
+
+    public void updateChangeReservationResultUI(boolean reservation) {
+        bookingView.printChangeReservationTableResult(reservation);
     }
 }

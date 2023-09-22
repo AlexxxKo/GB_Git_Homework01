@@ -1,8 +1,8 @@
 package Homework05.views;
 
-import OOP_Seminar05.Task01.models.Table;
-import OOP_Seminar05.Task01.presenters.View;
-import OOP_Seminar05.Task01.presenters.ViewObserver;
+import Homework05.models.Table;
+import Homework05.presenters.View;
+import Homework05.presenters.ViewObserver;
 
 import java.util.Collection;
 import java.util.Date;
@@ -42,12 +42,11 @@ public class BookingView implements View {
      * @param name имя
      */
     public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
-        observer.onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name);
+        observer.onChangeReservationTable(oldReservation, reservationDate, tableNo, name);
     }
 
     @Override
-    public void printChangeReservationTableResult(int[] reservationNo) {
-        System.out.printf("Ваша прошлая бронь #%d анулирована.  Новый столик успешно забронирован. Номер брони #%d\n",
-                reservationNo[0], reservationNo[1]);
+    public void printChangeReservationTableResult(boolean reservation) {
+        System.out.println(reservation ? "Ваша прошлая бронь аннулирована" : "Такого столика не существует");
     }
 }
