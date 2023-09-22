@@ -37,7 +37,7 @@ public class BookingPresenter implements ViewObserver {
     public void onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
         boolean reservation = tableModel.changeReservationTable(oldReservation, reservationDate, tableNo, name);
         updateChangeReservationResultUI(reservation);
-        onReservationTable(reservationDate, tableNo, name);
+        if (reservation) onReservationTable(reservationDate, tableNo, name);
     }
 
     public void updateChangeReservationResultUI(boolean reservation) {

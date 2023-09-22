@@ -47,6 +47,6 @@ public class BookingView implements View {
 
     @Override
     public void printChangeReservationTableResult(boolean reservation) {
-        System.out.println(reservation ? "Ваша прошлая бронь аннулирована" : "Такого столика не существует");
+        System.out.println(reservation ? "Ваша прошлая бронь аннулирована" : "Неверно указан номер предыдущего бронирование. Укажите, пожалуйста, правильный номер");
     }
 }
