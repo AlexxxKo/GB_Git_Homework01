@@ -1,4 +1,4 @@
-package Homework04;
+package Homework04.My;
 
 public abstract class Fruit {
     private final float weight;

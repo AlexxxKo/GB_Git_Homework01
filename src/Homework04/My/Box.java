@@ -1,7 +1,6 @@
-package Homework04;
+package Homework04.My;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Box<T extends Fruit> {
     private ArrayList<T> fruits;
