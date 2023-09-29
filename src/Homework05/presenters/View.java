@@ -13,7 +13,7 @@ public interface View {
     void showTables(Collection<Table> tables);
 
     /**
-     * Регистраци наблюдателя
+     * Регистрация наблюдателя
      * @param observer
      */
     void setObserver(ViewObserver observer);
