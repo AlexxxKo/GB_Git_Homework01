@@ -6,9 +6,10 @@ import java.util.List;
 public class JobAgency implements Publisher {
 
     @Override
-    public void sendOffer(String companyName, int salary) {
+    public void sendOffer(Vacancy vacancy) {
+        registerVacancy(vacancy);
         for (Observer observer : observers) {
-            observer.recieveOffer(companyName, salary);
+            observer.recieveOffer(vacancy.getCompanyName(), vacancy.getName(), vacancy.getSalary());
         }
     }
 
@@ -22,6 +23,17 @@ public class JobAgency implements Publisher {
         observers.remove(observer);
     }
 
+    @Override
+    public void registerVacancy(Vacancy vacancy) {
+        vacancies.add(vacancy);
+    }
+
+    @Override
+    public void removeVacancy(Vacancy vacancy) {
+        vacancies.remove(vacancy);
+    }
+
     List<Observer> observers = new ArrayList<>();
+    List<Vacancy> vacancies = new ArrayList<>();
 
 }

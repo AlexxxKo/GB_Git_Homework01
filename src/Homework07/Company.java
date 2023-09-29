@@ -7,7 +7,7 @@ import java.util.Random;
 public class Company {
     public void needEmployee() {
         int salary = random.nextInt(maxSalary);
-        jobAgency.sendOffer(name, salary);
+        jobAgency.sendOffer(new Vacancy(name,"Java", salary));
     }
 
     private Random random = new Random();
@@ -20,6 +20,5 @@ public class Company {
         this.name = name;
         this.jobAgency = jobAgency;
         this.maxSalary = maxSalary;
-        this.vacancies = new ArrayList<>();
     }
 }

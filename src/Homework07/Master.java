@@ -9,7 +9,7 @@ public class Master implements Observer {
     }
 
     @Override
-    public void recieveOffer(String nameCompany, int salary) {
+    public void recieveOffer(String nameCompany, String vacancy, int salary) {
         if (this.salary <= salary) {
             System.out.printf("Специалист %s: Мне нужна эта работа! (компания: %s; заработная плата: %d)\n",
                     name, nameCompany, salary);
