@@ -1,7 +1,7 @@
 package Homework07;
 
 public class Cleaner extends Applicant implements Observer {
-    private String findVacancy = "Cleaning";
+    private String findVacancy = "Cleaner";
 
     public Cleaner(String name) {
         this.name = name;
