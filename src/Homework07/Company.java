@@ -7,14 +7,14 @@ import java.util.Random;
 public class Company {
     public void needEmployee() {
         int salary = random.nextInt(maxSalary);
-        jobAgency.sendOffer(new Vacancy(name,"Java", salary));
+        jobAgency.sendOffer(new Vacancy(name, vacancy, salary));
     }
 
     private Random random = new Random();
     private String name;
     private Publisher jobAgency;
     private int maxSalary;
-    private List<Vacancy> vacancies;
+    private String vacancy;
 
     public Company(String name, Publisher jobAgency, int maxSalary) {
         this.name = name;

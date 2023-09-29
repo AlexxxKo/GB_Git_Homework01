@@ -1,11 +1,10 @@
 package Homework07;
 
-public class Student implements Observer {
-    private String name;
-    private int salary = 2000;
+public class Student extends Applicant implements Observer {
 
     public Student(String name) {
         this.name = name;
+        this.salary = 2000;
     }
 
     @Override
