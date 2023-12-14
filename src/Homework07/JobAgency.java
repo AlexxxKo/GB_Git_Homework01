@@ -9,8 +9,7 @@ public class JobAgency implements Publisher {
     public void sendOffer(Vacancy vacancy) {
         registerVacancy(vacancy);
         for (Observer observer : observers) {
-            if (observer.getFinderStatus())
-                observer.recieveOffer(vacancy.getCompanyName(), vacancy.getName(), vacancy.getSalary());
+            observer.recieveOffer(vacancy.getCompanyName(), vacancy.getName(), vacancy.getSalary());
         }
     }
 
